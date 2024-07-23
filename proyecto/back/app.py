@@ -4,7 +4,7 @@ import os
 
 app = Flask(__name__, template_folder='../front/HTML', static_folder='../static')
 port = 5000
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://jero:hola@localhost/tpintro' ## crear base de datos
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:mLAjvBDMiBEuzGAOukuYNOmbsCVLxIbd@monorail.proxy.rlwy.net:23697/railway' ## crear base de datos
 
 
 @app.route('/', defaults = {"n_usuario" : None})
