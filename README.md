@@ -41,7 +41,7 @@ Accede a tu garaje para ver tus diseños guardados.
 Instalación:
 Sigue estos pasos para configurar el proyecto en tu máquina local:
 
-Clona este repositorio: git clone git@github.com:jeroPC/trabajointroduccion.git
+Clona este repositorio: git clone git@github.com:leannnica/tp-ids-quis.git
 
 Navega al directorio del proyecto: cd trabajointroduccion/proyecto/back
 
