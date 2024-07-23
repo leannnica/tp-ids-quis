@@ -42,10 +42,8 @@ Instalación:
 Sigue estos pasos para configurar el proyecto en tu máquina local:
 
 Clona este repositorio: 
-  
-    ```
-    git clone git@github.com:leannnica/tp-ids-quis.git
-    ```
+    
+```git clone git@github.com:leannnica/tp-ids-quis.git```
 
 Navega al directorio del proyecto: cd trabajointroduccion/proyecto/back
 
