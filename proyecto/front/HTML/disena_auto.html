@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseña tu auto</title>
+    <link rel="stylesheet" href="../css/diseno.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script> var n_usuario = "{{n_usuario}}" </script>
+</head>
+<body>
+    
+    <header>
+        <nav class="navbar">
+          <div class="navbar-toggle" onclick="toggleNavbar()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+          <ul class="navbar-menu">
+            <li class="navbar-item">
+              <a href="javascript:history.back()" class="navbar-link">
+                <i class="fas fa-arrow-left"></i>
+                Volver a la página anterior
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="navbar-tooltip">
+          <p>Haz clic aquí para volver a la página anterior</p>
+          <div class="tooltip-arrow"></div>
+        </div>
+      </header>
+
+    <main>
+        <h1>Diseña tu auto</h1>
+        <p>Aquí podrás personalizar tu auto soñado.</p>
+
+        <section id="car-display">
+            <div id="car-container">
+                <canvas id="car-canvas" width="692" height="400"></canvas>
+                <div class="arrow-container">
+                    <button class="arrow-btn left-arrow">&#8592;</button>
+                    <button class="arrow-btn right-arrow">&#8594;</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="colores">
+          <h2>Selecciona el color de tu auto</h2>
+          <div id="color-options">
+              <input type="color" id="color-picker">
+          </div>
+      </section>
+
+      <section id="guardar-auto">
+    <h2>Guardar diseño de auto</h2>
+    <form id="guardarAutoForm" onsubmit="guardar_auto(event)">
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre del diseño" required>
+        <button type="submit">Guardar Diseño</button>
+    </form>
+    <div class="button-container">
+      {% if n_usuario %}
+        <a href="{{ url_for('garage', n_usuario=n_usuario) }}" class="btn-garage">Ir al Garaje</a>
+      {% endif %}
+    </div>
+</section>
+
+        <div class="spacer"></div>
+    </main>
+
+    <script src="{{ url_for('enviar_js', filename='Disenoauto.js') }}"></script>
+
+</body>
+</html>
