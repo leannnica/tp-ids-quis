@@ -12,9 +12,7 @@
     <header id="nav_inicial">
         <nav>
             <ul class="nav_botones">
-                {% if not n_usuario %}
                     <li><a href="{{ url_for('login_page') }}" class="nav_boton">Inicio sesión</a></li>
-                {% endif %}    
             </ul>
         </nav>
     </header>
@@ -33,27 +31,18 @@
 
         </section>
 
-        {% if n_usuario %}
-            <a href="{{ url_for('disenar', n_usuario = n_usuario) }}" class="btn-diseña">Diseña tu Auto</a>
-        {% else %}     
-            <a href="{{ url_for('disenar')}}" class="btn-diseña">Diseña tu Auto</a>
-        {% endif %} 
+            <a href="{{ url_for('disenar') }}" class="btn-diseña">Diseña tu Auto</a>
 
         <div id="sidebarIndicator" style="position: fixed; right: 0; top: 50%; cursor: pointer; z-index: 1000;">></div>
         <aside id="sidebar" class="hidden">
             <h2>
                 Usuario: 
-                {% if n_usuario %}
-                    {{n_usuario }}
-                {% else %}
                     <a href="{{ url_for('login_page') }}" class="nav_boton">Sin iniciar sesión</a>
-                {% endif %}
+                
             </h2>
             <ul>
-                {% if n_usuario %}
-                    <li><a href="{{ url_for('garage', n_usuario = n_usuario) }}">Garaje.</a></li>
+                    <li><a href="{{ url_for('garage') }}">Garaje.</a></li>
                     <li><a href="{{ url_for('home') }}">Cerrar sesión.</a></li>
-                    <button id="btn_eliminar" onclick="eliminar_cuenta(event)" data-usuario="{{ n_usuario }}">Eliminar Cuenta</button>
                 {% else %}     
                     <a href="{{ url_for('disenar')}}" class="btn-diseña">Diseña tu Auto</a>
                 {% endif %}
