@@ -15,7 +15,7 @@
         <nav>
             <ul class="nav_botones">
                 {% if not n_usuario %}
-                    <li><a href="{{ url_for('login_page') }}" class="nav_boton">Inicio sesión</a></li>
+                    <li><a href="inicio.html" class="nav_boton">Inicio sesión</a></li>
                 {% endif %}    
             </ul>
         </nav>
@@ -36,9 +36,9 @@
         </section>
 
         {% if n_usuario %}
-            <a href="{{ url_for('disenar', n_usuario = n_usuario) }}" class="btn-diseña">Diseña tu Auto</a>
+            <a href="./disena_auto.html" class="btn-diseña">Diseña tu Auto</a>
         {% else %}     
-            <a href="{{ url_for('disenar')}}" class="btn-diseña">Diseña tu Auto</a>
+            <a href="./disena_auto.html" class="btn-diseña">Diseña tu Auto</a>
         {% endif %} 
 
         <div id="sidebarIndicator" style="position: fixed; right: 0; top: 50%; cursor: pointer; z-index: 1000;">></div>
